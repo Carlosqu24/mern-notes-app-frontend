@@ -8,7 +8,7 @@ import { CreateUser } from './components/CreateUser';
 import { Navigation } from './components/Navigation';
 import { NotesList } from './components/NotesList';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 
 function App() {
@@ -18,10 +18,12 @@ function App() {
           <Navigation/>
 
           <div className="container p-4">
-              <Route exact path='/' component={NotesList} />
-              <Route path='/edit/:id' component={CreateNote} />
-              <Route path='/create' component={CreateNote} />
-              <Route path='/user' component={CreateUser} />
+              <Switch>
+                <Route exact path='/' component={NotesList} />
+                <Route path='/edit/:id' component={CreateNote} />
+                <Route path='/create' component={CreateNote} />
+                <Route path='/user' component={CreateUser} />
+              </Switch>
           </div>
         </Router>
     </div>
