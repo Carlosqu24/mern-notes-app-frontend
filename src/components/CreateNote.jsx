@@ -18,7 +18,7 @@ export const CreateNote = (props) => {
       const [note, setNote] = useState({})
 
       const getUsers = async () => {
-            const res = await axios.get('http://localhost:4000/api/users');
+            const res = await axios.get('https://mern-express-notes-app.herokuapp.com/api/users');
 
             //const usersUsername = res.data.map(user => user.username)
 
@@ -27,7 +27,7 @@ export const CreateNote = (props) => {
       };
 
       const getNote = async (id) => {
-            const res = await axios.get('http://localhost:4000/api/notes/' + id);
+            const res = await axios.get('https://mern-express-notes-app.herokuapp.com/api/users/' + id);
 
             setNote({
                   title: res.data.title,
@@ -63,8 +63,8 @@ export const CreateNote = (props) => {
 
 
             edit 
-                  ? await axios.put(`http://localhost:4000/api/notes/${_id}`, newNote)
-                  : await axios.post('http://localhost:4000/api/notes', newNote);
+                  ? await axios.put(`https://mern-express-notes-app.herokuapp.com/api/notes/${_id}`, newNote)
+                  : await axios.post('https://mern-express-notes-app.herokuapp.com/api/notes', newNote);
 
 
             window.location.href = "/"; // luego se tiene que cambiar

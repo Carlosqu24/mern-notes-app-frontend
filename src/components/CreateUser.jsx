@@ -8,7 +8,7 @@ export const CreateUser = () => {
 
       // USERS
       const getUsers = async () => {
-            const res = await axios.get('http://localhost:4000/api/users');
+            const res = await axios.get('https://mern-express-notes-app.herokuapp.com/api/users');
 
             setData(res.data);
       };
@@ -21,7 +21,7 @@ export const CreateUser = () => {
       const handleSubmit = async (e) => {
             e.preventDefault();
 
-            const res = await axios.post('http://localhost:4000/api/users', {
+            const res = await axios.post('https://mern-express-notes-app.herokuapp.com/api/users', {
                   username: userName
             });
 
@@ -30,7 +30,7 @@ export const CreateUser = () => {
 
       const handleDoubleClick = async (id) => {
 
-            const res = await axios.delete(`http://localhost:4000/api/users/${id}`, {
+            const res = await axios.delete(`https://mern-express-notes-app.herokuapp.com/api/users/${id}`, {
                   username: userName
             });
 

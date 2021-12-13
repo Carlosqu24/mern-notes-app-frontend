@@ -8,7 +8,7 @@ export const NotesList = () => {
       const [notes, setNotes] = useState([]);
 
       const getNotes = async () => {
-            const res = await axios.get('http://localhost:4000/api/notes');
+            const res = await axios.get('https://mern-express-notes-app.herokuapp.com/api/notes');
 
             setNotes(res.data)
       }
@@ -20,7 +20,7 @@ export const NotesList = () => {
       }, []);
 
       const deleteNote = async id => {
-            const res = await axios.delete(`http://localhost:4000/api/notes/${id}`);
+            const res = await axios.delete(`https://mern-express-notes-app.herokuapp.com/api/notes/${id}`);
 
             console.log(res);
 
